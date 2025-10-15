@@ -633,7 +633,7 @@ the "copyright" line and a pointer to where the full notice is found.
 
     This is an Unofficial container image for distributed deployment Perplexity AI MCP, which requires official API key to function
 
-    * [Context7 Docker Image (Gitub: https://github.com/MekayelAnik/perplexity-mcp-docker; Docker Hub: https://hub.docker.com/r/mekayelanik/perplexity-mcp)]
+    * [Perplexity MCP Docker Image (Gitub: https://github.com/MekayelAnik/perplexity-mcp-docker; Docker Hub: https://hub.docker.com/r/mekayelanik/perplexity-mcp)]
     * 
     * Copyright (C) [2025] [Mohammad Mekayel Anik (mekayel.anik@gmail.com)]
 
