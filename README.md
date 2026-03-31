@@ -3,13 +3,13 @@
 
 <div align="left">
 
-<img alt="perplexity-mcp" src="https://img.shields.io/badge/Perplexity-MCP-7C3AED?style=for-the-badge&logo=perplexity&logoColor=white" width="400">
+<img alt="perplexity-mcp" src="https://img.shields.io/badge/Perplexity-MCP-00E9A3?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiA3TDEyIDEyTDIyIDdMMTIgMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yIDEyTDEyIDE3TDIyIDEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxN0wxMiAyMkwyMiAxNyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+&logoColor=white" width="400">
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/perplexity-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/perplexity-mcp)
 [![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/perplexity-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/perplexity-mcp)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/MekayelAnik/perplexity-mcp-docker/refs/heads/main/LICENSE)
 
-**[NPM Package](https://www.npmjs.com/package/@perplexity-ai/mcp-server)** • **[GitHub Repository](https://github.com/mekayelanik/perplexity-mcp-docker)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/perplexity-mcp)**
+**[Official Website](https://docs.perplexity.ai/)** • **[Documentation](https://github.com/ppl-ai/modelcontextprotocol)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/perplexity-mcp)**
 
 </div>
 
@@ -18,58 +18,75 @@
 ## 📋 Table of Contents
 
 - [Overview](#overview)
+- [Supported Architectures](#supported-architectures)
+- [Available Tags](#available-tags)
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
-- [MCP Client Setup](#mcp-client-setup)
-- [Available Tools](#available-tools)
-- [Advanced Usage](#advanced-usage)
+- [MCP Client Configuration](#mcp-client-configuration)
+- [Network Configuration](#network-configuration)
+- [Updating](#updating)
 - [Troubleshooting](#troubleshooting)
-- [Resources & Support](#resources--support)
+- [Additional Resources](#additional-resources)
+- [Support & License](#support--license)
+- [Major Changes](#major-changes)
 
 ---
 
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+<a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+</a>
+</p>
+
 ## Overview
 
-Perplexity MCP Server brings real-time web search, advanced reasoning, and deep research capabilities to AI assistants through the official Perplexity API Platform. Powered by Sonar models and the Search API, it seamlessly integrates with VS Code, Cursor, Windsurf, Claude Desktop, and any MCP-compatible client.
+Perplexity MCP Server provides AI-powered web search and research capabilities through the Model Context Protocol. Built on Alpine Linux for minimal footprint and maximum security.
 
 ### Key Features
 
-✨ **Four Powerful Tools** - Search, Ask, Research, and Reason capabilities  
-🔍 **Real-Time Web Search** - Access current information from across the internet  
-🧠 **Advanced Reasoning** - Complex problem-solving with sonar-reasoning-pro  
-📚 **Deep Research** - Comprehensive analysis with sonar-deep-research  
-🚀 **Multiple Protocols** - HTTP, SSE, and WebSocket transport support  
-🌐 **CORS Ready** - Built-in CORS support for browser-based clients  
-⚡ **High Performance** - Optimized for speed and reliability  
-🎯 **Zero Configuration** - Works with API key only  
-🔧 **Highly Customizable** - Fine-tune models, temperature, tokens, and more  
-📊 **Health Monitoring** - Built-in health check endpoint
+✨ **Multi-Architecture Support** - Native support for x86-64 and ARM64  
+🚀 **Multiple Transport Protocols** - HTTP, SSE, and WebSocket support  
+🔒 **Secure by Design** - Alpine-based with minimal attack surface  
+⚡ **High Performance** - ZSTD compression for faster deployments  
+🎯 **Production Ready** - Stable releases with comprehensive testing  
+🔧 **Easy Configuration** - Simple environment variable setup
 
-### Supported Architectures
+---
 
-| Architecture | Status | Notes |
-|:-------------|:------:|:------|
-| **x86-64** | ✅ Stable | Intel/AMD processors |
-| **ARM64** | ✅ Stable | Raspberry Pi, Apple Silicon |
+## Supported Architectures
 
-### Available Tags
+| Architecture | Tag Prefix | Status |
+|:-------------|:-----------|:------:|
+| **x86-64** | `amd64-<version>` | ✅ Stable |
+| **ARM64** | `arm64v8-<version>` | ✅ Stable |
 
-| Tag | Stability | Use Case |
-|:----|:---------:|:---------|
-| `stable` | ⭐⭐⭐ | **Production (recommended)** |
-| `latest` | ⭐⭐⭐ | Latest stable features |
-| `1.x.x` | ⭐⭐⭐ | Version pinning |
-| `beta` | ⚠️ | Testing only |
+> 💡 Multi-arch images automatically select the correct architecture for your system.
+
+---
+
+## Available Tags
+
+| Tag | Stability | Description | Use Case |
+|:----|:---------:|:------------|:---------|
+| `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
+| `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
+| `1.0.21` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `beta` | ⚠️ | Beta releases | **Testing only** |
+
+### System Requirements
+
+- **Docker Engine:** 23.0+
+- **RAM:** Minimum 512MB
+- **CPU:** Single core sufficient
+
+> 🔒 **CRITICAL:** Do NOT expose this container directly to the internet without proper security measures (reverse proxy, SSL/TLS, authentication, firewall rules).
 
 ---
 
 ## Quick Start
-
-### Prerequisites
-
-- Docker Engine 23.0+
-- Perplexity API Key ([Get yours here](https://www.perplexity.ai/account/api/group))
-- Network access for API communication
 
 ### Docker Compose (Recommended)
 
@@ -82,26 +99,22 @@ services:
     ports:
       - "8050:8050"
     environment:
-      # Required
-      - PERPLEXITY_API_KEY=pplx-your-api-key-here
-      
-      # Optional Configuration
-      - PERPLEXITY_DEFAULT_MODEL=sonar-pro
-      - PERPLEXITY_MAX_TOKENS=4096
-      - PERPLEXITY_TEMPERATURE=0.7
-      - PERPLEXITY_SEARCH_RECENCY_FILTER=month
-      
-      # Server Settings
       - PORT=8050
-      - PROTOCOL=SHTTP
-      - CORS=*
+      - INTERNAL_PORT=38011
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Dhaka
+      - NODE_ENV=production
+      - PROTOCOL=HTTP
+      - ENABLE_HTTPS=false
+      - HTTP_VERSION_MODE=auto
+      # Optional: require Bearer token auth at HAProxy layer
+      # - API_KEY=replace-with-strong-secret
+    hostname: perplexity-mcp
+    domainname: local
 ```
 
 **Deploy:**
-
 ```bash
 docker compose up -d
 docker compose logs -f perplexity-mcp
@@ -114,9 +127,15 @@ docker run -d \
   --name=perplexity-mcp \
   --restart=unless-stopped \
   -p 8050:8050 \
-  -e PERPLEXITY_API_KEY=pplx-your-api-key-here \
   -e PORT=8050 \
-  -e PROTOCOL=SHTTP \
+  -e INTERNAL_PORT=38011 \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Asia/Dhaka \
+  -e NODE_ENV=production \
+  -e PROTOCOL=HTTP \
+  -e ENABLE_HTTPS=false \
+  -e HTTP_VERSION_MODE=auto \
   mekayelanik/perplexity-mcp:stable
 ```
 
@@ -124,12 +143,21 @@ docker run -d \
 
 | Protocol | Endpoint | Use Case |
 |:---------|:---------|:---------|
-| **HTTP** | `http://host-ip:8050/mcp` | **Recommended** |
+| **HTTP** | `http://host-ip:8050/mcp` | Best compatibility (recommended) |
 | **SSE** | `http://host-ip:8050/sse` | Real-time streaming |
-| **WebSocket** | `ws://host-ip:8050/message` | Bidirectional |
-| **Health** | `http://host-ip:8050/healthz` | Monitoring |
+| **WebSocket** | `ws://host-ip:8050/message` | Bidirectional communication |
 
-> ⏱️ Server ready in 5-10 seconds after container start
+When HTTPS is enabled (`ENABLE_HTTPS=true`), use TLS endpoints:
+
+| Protocol | Endpoint |
+|:---------|:---------|
+| **SHTTP** | `https://host-ip:8050/mcp` |
+| **SSE** | `https://host-ip:8050/sse` |
+| **WebSocket** | `wss://host-ip:8050/message` |
+
+> ⚠️ **Security Warning:** The container now defaults to HTTP (`ENABLE_HTTPS=false`) for easier local setup. Use `ENABLE_HTTPS=true` for production, public networks, or any untrusted environment.
+>
+> ⏱️ **ARM Devices:** Allow 30-60 seconds for initialization before accessing endpoints.
 
 ---
 
@@ -137,191 +165,145 @@ docker run -d \
 
 ### Environment Variables
 
-#### Required Settings
-
-| Variable | Required | Description |
-|:---------|:--------:|:------------|
-| `PERPLEXITY_API_KEY` | **✅ Yes** | Your Perplexity API key |
-
-#### Model Configuration
-
 | Variable | Default | Description |
 |:---------|:-------:|:------------|
-| `PERPLEXITY_DEFAULT_MODEL` | `sonar-pro` | Default model for queries |
-| `PERPLEXITY_MAX_TOKENS` | `4096` | Max tokens per response (1-131072) |
-| `PERPLEXITY_TEMPERATURE` | `0.7` | Generation temperature (0-2) |
-
-#### Search Configuration
-
-| Variable | Default | Description |
-|:---------|:-------:|:------------|
-| `PERPLEXITY_SEARCH_DOMAIN_FILTER` | _(none)_ | Comma-separated domains to search |
-| `PERPLEXITY_SEARCH_RECENCY_FILTER` | `month` | Time filter: hour, day, week, month, year |
-| `PERPLEXITY_RETURN_IMAGES` | `false` | Include images in search results |
-| `PERPLEXITY_RETURN_RELATED_QUESTIONS` | `false` | Include related questions |
-
-#### Server Configuration
-
-| Variable | Default | Description |
-|:---------|:-------:|:------------|
-| `PORT` | `8050` | Server port (1-65535) |
-| `PROTOCOL` | `SHTTP` | Transport protocol (SHTTP/SSE/WS) |
-| `CORS` | _(none)_ | Cross-Origin configuration |
+| `PORT` | `8050` | Internal server port |
+| `INTERNAL_PORT` | `38011` | Internal MCP server port used by supergateway |
 | `PUID` | `1000` | User ID for file permissions |
 | `PGID` | `1000` | Group ID for file permissions |
-| `TZ` | `Asia/Dhaka` | Container timezone |
-| `DEBUG_MODE` | `false` | Enable debug mode |
+| `TZ` | `Asia/Dhaka` | Container timezone ([TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) |
+| `NODE_ENV` | `production` | Node.js environment |
+| `PROTOCOL` | `SHTTP` | Default transport protocol |
+| `API_KEY` | *(empty)* | Enables Bearer token auth (`Authorization: Bearer <API_KEY>`) |
+| `CORS` | *(empty)* | Comma-separated CORS origins, supports `*` |
+| `ENABLE_HTTPS` | `false` | Enables TLS termination in HAProxy |
+| `TLS_CERT_PATH` | `/etc/haproxy/certs/server.crt` | TLS cert path |
+| `TLS_KEY_PATH` | `/etc/haproxy/certs/server.key` | TLS private key path |
+| `TLS_PEM_PATH` | `/etc/haproxy/certs/server.pem` | Combined PEM file used by HAProxy |
+| `TLS_CN` | `localhost` | CN for auto-generated certificate |
+| `TLS_SAN` | `DNS:<TLS_CN>` | SAN for auto-generated certificate |
+| `TLS_DAYS` | `365` | Auto-generated cert validity period |
+| `TLS_MIN_VERSION` | `TLSv1.3` | Minimum TLS protocol (`TLSv1.2` or `TLSv1.3`) |
+| `HTTP_VERSION_MODE` | `auto` | `auto`, `all`, `h1`, `h2`, `h3`, `h1+h2` |
+| `DEBUG_MODE` | *(empty)* | Enables debug hold mode when set truthy |
 
-### Getting Your API Key
+### HTTPS and HTTP Version Notes
 
-1. Visit [Perplexity API Portal](https://www.perplexity.ai/account/api/group)
-2. Sign up or log in to your account
-3. Choose a plan (free tier available)
-4. Generate a new API key
-5. Copy the key and use it in your Docker configuration
+- If `ENABLE_HTTPS=true` and cert files are missing, the container auto-generates a self-signed certificate.
+- If `TLS_CERT_PATH` and `TLS_KEY_PATH` exist, they are merged into `TLS_PEM_PATH` and used directly.
+- `HTTP_VERSION_MODE=h3` (or `auto`) enables HTTP/3 only when HAProxy build includes QUIC; otherwise it safely falls back.
 
-### Available Models
+### API Key Authentication Notes
 
-| Model | Use Case | Context |
-|:------|:---------|:-------:|
-| **sonar-pro** | General-purpose with web search | 128K |
-| **sonar-reasoning-pro** | Advanced reasoning & problem-solving | 128K |
-| **sonar-deep-research** | Comprehensive research & analysis | 128K |
-| **llama-3.1-sonar-small-128k-online** | Fast, lightweight queries | 128K |
-| **llama-3.1-sonar-large-128k-online** | Balanced performance | 128K |
-| **llama-3.1-sonar-huge-128k-online** | Maximum capability | 128K |
+- Set `API_KEY` to enforce authentication at reverse proxy level.
+- Expected header format: `Authorization: Bearer <API_KEY>`.
+- Localhost health checks remain accessible for liveness/readiness.
 
-### Protocol Configuration
+### User & Group IDs
 
-```yaml
-# HTTP/Streamable HTTP (Recommended)
-environment:
-  - PROTOCOL=SHTTP
+Find your IDs and set them to avoid permission issues:
 
-# Server-Sent Events
-environment:
-  - PROTOCOL=SSE
-
-# WebSocket
-environment:
-  - PROTOCOL=WS
+```bash
+id username
+# uid=1000(user) gid=1000(group)
 ```
 
-### CORS Configuration
+### Timezone Examples
 
 ```yaml
-# Development - Allow all origins
-environment:
-  - CORS=*
-
-# Production - Specific domains
-environment:
-  - CORS=https://example.com,https://app.example.com
-
-# Mixed domains and IPs
-environment:
-  - CORS=https://example.com,192.168.1.100:3000
-
-# Regex patterns
-environment:
-  - CORS=/^https:\/\/.*\.example\.com$/
-```
-
-> ⚠️ **Security:** Never use `CORS=*` in production environments
-
-### Advanced Configuration Examples
-
-#### Research-Optimized Setup
-
-```yaml
-environment:
-  - PERPLEXITY_API_KEY=pplx-your-key
-  - PERPLEXITY_DEFAULT_MODEL=sonar-deep-research
-  - PERPLEXITY_MAX_TOKENS=8192
-  - PERPLEXITY_TEMPERATURE=0.8
-  - PERPLEXITY_SEARCH_RECENCY_FILTER=week
-  - PERPLEXITY_RETURN_IMAGES=true
-  - PERPLEXITY_RETURN_RELATED_QUESTIONS=true
-```
-
-#### Fast Response Setup
-
-```yaml
-environment:
-  - PERPLEXITY_API_KEY=pplx-your-key
-  - PERPLEXITY_DEFAULT_MODEL=llama-3.1-sonar-small-128k-online
-  - PERPLEXITY_MAX_TOKENS=2048
-  - PERPLEXITY_TEMPERATURE=0.5
-  - PERPLEXITY_SEARCH_RECENCY_FILTER=day
-```
-
-#### Domain-Specific Search
-
-```yaml
-environment:
-  - PERPLEXITY_API_KEY=pplx-your-key
-  - PERPLEXITY_DEFAULT_MODEL=sonar-pro
-  - PERPLEXITY_SEARCH_DOMAIN_FILTER=arxiv.org,github.com,stackoverflow.com
-  - PERPLEXITY_SEARCH_RECENCY_FILTER=month
+- TZ=Asia/Dhaka        # Bangladesh
+- TZ=America/New_York  # US Eastern
+- TZ=Europe/London     # UK
+- TZ=UTC               # Universal Time
 ```
 
 ---
 
-## MCP Client Setup
+## MCP Client Configuration
 
-### Transport Compatibility
+### Transport Support
 
 | Client | HTTP | SSE | WebSocket | Recommended |
 |:-------|:----:|:---:|:---------:|:------------|
 | **VS Code (Cline/Roo-Cline)** | ✅ | ✅ | ❌ | HTTP |
 | **Claude Desktop** | ✅ | ✅ | ⚠️* | HTTP |
+| **Claude CLI** | ✅ | ✅ | ⚠️* | HTTP |
+| **Codex CLI** | ✅ | ✅ | ⚠️* | HTTP |
+| **Codeium (Windsurf)** | ✅ | ✅ | ⚠️* | HTTP |
 | **Cursor** | ✅ | ✅ | ⚠️* | HTTP |
-| **Windsurf** | ✅ | ✅ | ⚠️* | HTTP |
 
-> ⚠️ *WebSocket support is experimental
+> ⚠️ *WebSocket is experimental ([Issue #1288](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1288))
+
+---
 
 ### VS Code (Cline/Roo-Cline)
 
-Add to `.vscode/settings.json`:
+Configure in `.vscode/settings.json`:
 
 ```json
 {
   "mcp.servers": {
     "perplexity": {
       "url": "http://host-ip:8050/mcp",
-      "transport": "http",
-      "autoApprove": [
-        "perplexity_search",
-        "perplexity_ask",
-        "perplexity_research",
-        "perplexity_reason"
-      ]
+      "transport": "http"
     }
   }
 }
 ```
 
-### Claude Desktop
+---
 
-**Config Locations:**
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+### Claude Desktop App/Claude Code
+
+**Configuration:**
+### **With API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp","headers":{"Authorization":"Bearer <YOUR_API_KEY>"}}'
+```
+### **Without API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp"}'
+```
+
+---
+
+### Codex CLI
+
+Configure in `~/.codex/config.json`:
 
 ```json
 {
   "mcpServers": {
     "perplexity": {
       "transport": "http",
-      "url": "http://localhost:8050/mcp"
+      "url": "http://host-ip:8050/mcp"
     }
   }
 }
 ```
+
+---
+
+### Codeium (Windsurf)
+
+Configure in `.codeium/mcp_settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "perplexity": {
+      "transport": "http",
+      "url": "http://host-ip:8050/mcp"
+    }
+  }
+}
+```
+
+---
 
 ### Cursor
 
-Add to `~/.cursor/mcp.json`:
+Configure in `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -334,286 +316,116 @@ Add to `~/.cursor/mcp.json`:
 }
 ```
 
-### Windsurf (Codeium)
+---
 
-Add to `.codeium/mcp_settings.json`:
+### Testing Configuration
 
-```json
-{
-  "mcpServers": {
-    "perplexity": {
-      "transport": "http",
-      "url": "http://host-ip:8050/mcp"
-    }
-  }
-}
-```
-
-### Claude Code
-
-Add to `~/.config/claude-code/mcp_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "perplexity": {
-      "transport": "http",
-      "url": "http://localhost:8050/mcp"
-    }
-  }
-}
-```
-
-Or configure via CLI:
+Verify with [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
 
 ```bash
-claude-code config mcp add perplexity \
-  --transport http \
-  --url http://localhost:8050/mcp
-```
-
-### GitHub Copilot CLI
-
-Add to `~/.github-copilot/mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "perplexity": {
-      "transport": "http",
-      "url": "http://host-ip:8050/mcp"
-    }
-  }
-}
+npm install -g @modelcontextprotocol/inspector
+mcp-inspector http://host-ip:8050/mcp
 ```
 
 ---
 
-## Available Tools
+## Network Configuration
 
-### 🔍 perplexity_search
-Direct web search using the Perplexity Search API. Returns ranked search results with metadata, perfect for finding current information.
+### Comparison
 
-**Use Cases:**
-- Finding recent news and articles
-- Locating specific information across the web
-- Getting ranked search results with relevance scores
-- Quick information lookup
-
-**Example Prompts:**
-- "Search for the latest AI developments"
-- "Find recent articles about climate change"
-- "What are the top search results for quantum computing?"
+| Network Mode | Complexity | Performance | Use Case |
+|:-------------|:----------:|:-----------:|:---------|
+| **Bridge** | ⭐ Easy | ⭐⭐⭐ Good | Default, isolated |
+| **Host** | ⭐⭐ Moderate | ⭐⭐⭐⭐ Excellent | Direct host access |
+| **MACVLAN** | ⭐⭐⭐ Advanced | ⭐⭐⭐⭐ Excellent | Dedicated IP |
 
 ---
 
-### 💬 perplexity_ask
-General-purpose conversational AI with real-time web search using the `sonar-pro` model. Great for quick questions and everyday searches.
-
-**Use Cases:**
-- Answering general questions with current data
-- Quick fact-checking and verification
-- Conversational search queries
-- Getting summaries with citations
-
-**Example Prompts:**
-- "What's happening in the stock market today?"
-- "Explain the latest developments in renewable energy"
-- "Who won the recent elections?"
-
----
-
-### 📚 perplexity_research
-Deep, comprehensive research using the `sonar-deep-research` model. Ideal for thorough analysis and detailed reports.
-
-**Use Cases:**
-- In-depth topic analysis
-- Comprehensive literature reviews
-- Detailed market research
-- Academic and professional research
-
-**Example Prompts:**
-- "Research the impact of AI on healthcare"
-- "Give me a comprehensive analysis of electric vehicle market trends"
-- "Research the history and future of space exploration"
-
----
-
-### 🧠 perplexity_reason
-Advanced reasoning and problem-solving using the `sonar-reasoning-pro` model. Perfect for complex analytical tasks.
-
-**Use Cases:**
-- Solving complex problems step-by-step
-- Logical reasoning and analysis
-- Mathematical and scientific calculations
-- Strategic planning and decision-making
-
-**Example Prompts:**
-- "Reason through the implications of quantum computing on cryptography"
-- "Analyze the pros and cons of different renewable energy sources"
-- "What are the logical steps to solve this optimization problem?"
-
----
-
-## Advanced Usage
-
-### Production Configuration
+### Bridge Network (Default)
 
 ```yaml
 services:
   perplexity-mcp:
     image: mekayelanik/perplexity-mcp:stable
-    container_name: perplexity-mcp
-    restart: unless-stopped
     ports:
       - "8050:8050"
-    environment:
-      # Required
-      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
-      
-      # Model Configuration
-      - PERPLEXITY_DEFAULT_MODEL=sonar-pro
-      - PERPLEXITY_MAX_TOKENS=4096
-      - PERPLEXITY_TEMPERATURE=0.7
-      
-      # Search Settings
-      - PERPLEXITY_SEARCH_RECENCY_FILTER=month
-      - PERPLEXITY_RETURN_IMAGES=false
-      - PERPLEXITY_RETURN_RELATED_QUESTIONS=false
-      
-      # Server Settings
-      - PORT=8050
-      - PROTOCOL=SHTTP
-      - CORS=https://app.example.com
-      - PUID=1000
-      - PGID=1000
-      - TZ=UTC
-    
-    # Resource limits
-    deploy:
-      resources:
-        limits:
-          cpus: '1.0'
-          memory: 512M
-        reservations:
-          cpus: '0.5'
-          memory: 256M
-    
-    # Health check
-    healthcheck:
-      test: ["CMD", "nc", "-z", "localhost", "8050"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
 ```
 
-### Reverse Proxy Setup
+**Benefits:** Container isolation, easy setup, works everywhere
+**Access:** `http://localhost:8050/mcp`
 
-#### Nginx
+---
 
-```nginx
-server {
-    listen 80;
-    server_name perplexity.example.com;
-    
-    location / {
-        proxy_pass http://localhost:8050;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        
-        # Timeouts for API calls
-        proxy_connect_timeout 60;
-        proxy_send_timeout 60;
-        proxy_read_timeout 60;
-    }
-}
-```
-
-#### Traefik
+### Host Network (Linux Only)
 
 ```yaml
 services:
   perplexity-mcp:
     image: mekayelanik/perplexity-mcp:stable
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.perplexity-mcp.rule=Host(`perplexity.example.com`)"
-      - "traefik.http.routers.perplexity-mcp.entrypoints=websecure"
-      - "traefik.http.routers.perplexity-mcp.tls.certresolver=myresolver"
-      - "traefik.http.services.perplexity-mcp.loadbalancer.server.port=8050"
+    network_mode: host
 ```
 
-### Multiple Instances for Different Use Cases
+**Benefits:** Maximum performance, no NAT overhead, no port mapping needed
+**Considerations:** Linux only, shares host network namespace
+**Access:** `http://localhost:8050/mcp`
+
+---
+
+### MACVLAN Network (Advanced)
 
 ```yaml
 services:
-  # General purpose instance
-  perplexity-mcp-general:
+  perplexity-mcp:
     image: mekayelanik/perplexity-mcp:stable
-    container_name: perplexity-general
-    ports:
-      - "8050:8050"
-    environment:
-      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
-      - PERPLEXITY_DEFAULT_MODEL=sonar-pro
-      - PORT=8050
-  
-  # Research-focused instance
-  perplexity-mcp-research:
-    image: mekayelanik/perplexity-mcp:stable
-    container_name: perplexity-research
-    ports:
-      - "8051:8050"
-    environment:
-      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
-      - PERPLEXITY_DEFAULT_MODEL=sonar-deep-research
-      - PERPLEXITY_MAX_TOKENS=8192
-      - PERPLEXITY_RETURN_IMAGES=true
-      - PERPLEXITY_RETURN_RELATED_QUESTIONS=true
-      - PORT=8050
-  
-  # Fast response instance
-  perplexity-mcp-fast:
-    image: mekayelanik/perplexity-mcp:stable
-    container_name: perplexity-fast
-    ports:
-      - "8052:8050"
-    environment:
-      - PERPLEXITY_API_KEY=${PERPLEXITY_API_KEY}
-      - PERPLEXITY_DEFAULT_MODEL=llama-3.1-sonar-small-128k-online
-      - PERPLEXITY_MAX_TOKENS=2048
-      - PORT=8050
+    mac_address: "AB:BC:CD:DE:EF:01"
+    networks:
+      macvlan-net:
+        ipv4_address: 192.168.1.100
+
+networks:
+  macvlan-net:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
 ```
 
-### Using Environment File
+**Benefits:** Dedicated IP, direct LAN access
+**Considerations:** Linux only, requires additional setup
+**Access:** `http://192.168.1.100:8050/mcp`
 
-Create `.env` file:
+---
+
+## Updating
+
+### Docker Compose
 
 ```bash
-PERPLEXITY_API_KEY=pplx-your-api-key-here
-PERPLEXITY_DEFAULT_MODEL=sonar-pro
-PERPLEXITY_MAX_TOKENS=4096
-PERPLEXITY_TEMPERATURE=0.7
-PORT=8050
-PROTOCOL=SHTTP
-CORS=https://example.com
+docker compose pull
+docker compose up -d
+docker image prune -f
 ```
 
-Then use in docker-compose.yml:
+### Docker CLI
 
-```yaml
-services:
-  perplexity-mcp:
-    image: mekayelanik/perplexity-mcp:stable
-    env_file: .env
-    ports:
-      - "${PORT}:${PORT}"
+```bash
+docker pull mekayelanik/perplexity-mcp:stable
+docker stop perplexity-mcp && docker rm perplexity-mcp
+# Run your original docker run command
+docker image prune -f
+```
+
+### One-Time Update with Watchtower
+
+```bash
+docker run --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower \
+  --run-once \
+  perplexity-mcp
 ```
 
 ---
@@ -622,281 +434,142 @@ services:
 
 ### Pre-Flight Checklist
 
-- ✅ Docker 23.0+
-- ✅ Valid Perplexity API key
+- ✅ Docker Engine 23.0+
 - ✅ Port 8050 available
-- ✅ Network connectivity to Perplexity API
+- ✅ Sufficient startup time (ARM devices)
 - ✅ Latest stable image
-- ✅ Correct environment variables
+- ✅ Correct configuration
 
 ### Common Issues
 
-**API Key Not Set**
-```bash
-# Error: PERPLEXITY_API_KEY environment variable is REQUIRED
-# Solution: Set your API key
-docker run -e PERPLEXITY_API_KEY=pplx-your-key-here ...
-```
+#### Container Won't Start
 
-**Container Won't Start**
 ```bash
-# Check logs for detailed error
+# Check Docker version
+docker --version
+
+# Verify port availability
+sudo netstat -tulpn | grep 8050
+
+# Check logs
 docker logs perplexity-mcp
-
-# Pull latest image
-docker pull mekayelanik/perplexity-mcp:stable
-
-# Restart container
-docker restart perplexity-mcp
 ```
 
-**Connection Refused**
-```bash
-# Verify container is running
-docker ps | grep perplexity-mcp
-
-# Check port binding
-docker port perplexity-mcp
-
-# Test health endpoint
-curl http://localhost:8050/healthz
-```
-
-**Invalid Model Error**
-```yaml
-# Use a valid model name
-environment:
-  - PERPLEXITY_DEFAULT_MODEL=sonar-pro  # ✅ Valid
-  # Not: PERPLEXITY_DEFAULT_MODEL=gpt-4  # ❌ Invalid
-```
-
-**API Rate Limiting**
-```bash
-# Check your API usage at:
-# https://www.perplexity.ai/account/api/group
-
-# Consider upgrading your plan for higher limits
-```
-
-**CORS Errors**
-```yaml
-# Development - allow all
-environment:
-  - CORS=*
-
-# Production - specific origins
-environment:
-  - CORS=https://yourdomain.com
-```
-
-**Temperature Out of Range**
-```yaml
-# Must be between 0 and 2
-environment:
-  - PERPLEXITY_TEMPERATURE=0.7  # ✅ Valid
-  # Not: PERPLEXITY_TEMPERATURE=3.0  # ❌ Invalid
-```
-
-**Max Tokens Error**
-```yaml
-# Must be between 1 and 131072
-environment:
-  - PERPLEXITY_MAX_TOKENS=4096  # ✅ Valid
-  # Not: PERPLEXITY_MAX_TOKENS=999999  # ❌ Invalid
-```
-
-**Debug Mode**
-```yaml
-# Enable verbose debugging
-environment:
-  - DEBUG_MODE=verbose
-
-# Then check logs
-docker logs -f perplexity-mcp
-```
-
-### Health Check Testing
+#### Permission Errors
 
 ```bash
-# Basic health check
-curl http://localhost:8050/healthz
+# Get your IDs
+id $USER
 
-# Test MCP endpoint
+# Update configuration with correct PUID/PGID
+# Fix volume permissions if needed
+sudo chown -R 1000:1000 /path/to/volume
+```
+
+#### Client Cannot Connect
+
+```bash
+# Test connectivity
 curl http://localhost:8050/mcp
+curl http://host-ip:8050/mcp
+curl -k https://localhost:8050/mcp
+curl -k https://host-ip:8050/mcp
 
-# View running configuration
-docker logs perplexity-mcp | grep "CONFIGURATION"
+# Check firewall
+sudo ufw status
+
+# Verify container
+docker inspect perplexity-mcp | grep IPAddress
 ```
 
-### Validation Messages
+#### Slow ARM Performance
 
-The server provides helpful validation messages:
+- Wait 30-60 seconds after start
+- Monitor: `docker logs -f perplexity-mcp`
+- Check resources: `docker stats perplexity-mcp`
+- Use faster storage (SSD vs SD card)
+
+### Debug Information
+
+When reporting issues, include:
 
 ```bash
-# ✅ Success messages
-🔑 API Key: pplx-xxxx...xxxx (length: 40)
-🚀 Launching Perplexity Ask MCP Server with protocol: SHTTP/streamableHttp on port: 8050
+# System info
+docker --version && uname -a
 
-# ⚠️ Warning messages
-⚠️ Warning: Unknown PERPLEXITY_DEFAULT_MODEL: 'invalid-model'
-   Valid models: sonar-pro, sonar-reasoning-pro, sonar-deep-research
-   Using default: sonar-pro
+# Container logs
+docker logs perplexity-mcp --tail 200 > logs.txt
 
-# ❌ Error messages
-❌ ERROR: PERPLEXITY_API_KEY environment variable is REQUIRED
+# Container config
+docker inspect perplexity-mcp > inspect.json
 ```
 
 ---
 
-## Resources & Support
+## Additional Resources
 
 ### Documentation
-- 📦 [Official NPM Package](https://www.npmjs.com/package/@perplexity-ai/mcp-server)
-- 📘 [DeepWiki Documentation](https://deepwiki.com/ppl-ai/modelcontextprotocol)
-- 🐳 [Docker Hub](https://hub.docker.com/r/mekayelanik/perplexity-mcp)
-- 🔧 [GitHub Repository](https://github.com/mekayelanik/perplexity-mcp)
+- 📚 [Perplexity Official Docs](https://github.com/ppl-ai/modelcontextprotocol)
+- 📦 [NPM Package](https://www.npmjs.com/package/@perplexity-ai/mcp-server)
+- 🔧 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)
 
-### Perplexity Resources
-- 🌐 [Perplexity API Portal](https://www.perplexity.ai/account/api/group)
-- 💬 [Community Forum](https://community.perplexity.ai)
-- 📚 [API Documentation](https://docs.perplexity.ai)
+### Docker Resources
+- 🐳 [Docker Compose Best Practices](https://docs.docker.com/compose/production/)
+- 🌐 [Docker Networking](https://docs.docker.com/network/)
+- 🛡️ [Docker Security](https://docs.docker.com/engine/security/)
 
-### MCP Resources
-- 📘 [MCP Protocol Specification](https://modelcontextprotocol.io)
-- 🎓 [MCP Documentation](https://modelcontextprotocol.io/docs)
-- 💬 [MCP Community](https://discord.gg/mcp)
+### Monitoring
+- 📊 [Diun - Update Notifier](https://crazymax.dev/diun/)
+- ⚡ [Watchtower](https://containrrr.dev/watchtower/)
+
+---
+
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+  <a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+  </a>
+</p>
+
+## Support & License
 
 ### Getting Help
 
 **Docker Image Issues:**
-- [GitHub Issues](https://github.com/mekayelanik/perplexity-mcp/issues)
-- [Discussions](https://github.com/mekayelanik/perplexity-mcp/discussions)
+- GitHub: [perplexity-mcp-docker/issues](https://github.com/MekayelAnik/perplexity-mcp/issues)
 
-**API & Tool Questions:**
-- Check logs: `docker logs perplexity-mcp`
-- Test health: `curl http://localhost:8050/healthz`
-- Visit [DeepWiki](https://deepwiki.com/ppl-ai/modelcontextprotocol)
-- Community: [community.perplexity.ai](https://community.perplexity.ai)
+**Perplexity MCP Issues:**
+- GitHub: [ppl-ai/modelcontextprotocol/issues](https://github.com/ppl-ai/modelcontextprotocol/issues)
+- Website: [docs.perplexity.ai](https://docs.perplexity.ai/)
 
-### Updating
+### Contributing
 
-```bash
-# Docker Compose
-docker compose pull
-docker compose up -d
+We welcome contributions:
+1. Report bugs via GitHub Issues
+2. Suggest features
+3. Improve documentation
+4. Test beta releases
 
-# Docker CLI
-docker pull mekayelanik/perplexity-mcp:stable
-docker stop perplexity-mcp
-docker rm perplexity-mcp
-# Re-run your docker run command
-```
+### License
 
-### Version Pinning
+GPL License. See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/perplexity-mcp-docker/refs/heads/main/LICENSE) for details.
 
-```yaml
-# Use specific version
-services:
-  perplexity-mcp:
-    image: mekayelanik/perplexity-mcp:1.0.9
-
-# Or use stable tag (recommended)
-services:
-  perplexity-mcp:
-    image: mekayelanik/perplexity-mcp:stable
-```
+Perplexity MCP server has its own license - see [Main NPM repo](https://github.com/ppl-ai/modelcontextprotocol).
 
 ---
 
-## Performance Tips
+### Major Changes
 
-### Optimize for Speed
+<ul>
+  <li><strong>Initial Release:</strong> Full CI/CD pipeline with HAProxy, HTTPS/TLS, QUIC/HTTP3, API key auth</li>
+</ul>
 
-```yaml
-environment:
-  - PERPLEXITY_DEFAULT_MODEL=llama-3.1-sonar-small-128k-online
-  - PERPLEXITY_MAX_TOKENS=2048
-  - PERPLEXITY_TEMPERATURE=0.5
-```
-
-### Optimize for Quality
-
-```yaml
-environment:
-  - PERPLEXITY_DEFAULT_MODEL=sonar-deep-research
-  - PERPLEXITY_MAX_TOKENS=8192
-  - PERPLEXITY_TEMPERATURE=0.8
-  - PERPLEXITY_RETURN_IMAGES=true
-  - PERPLEXITY_RETURN_RELATED_QUESTIONS=true
-```
-
-### Resource Limits
-
-```yaml
-deploy:
-  resources:
-    limits:
-      cpus: '2.0'
-      memory: 1G
-    reservations:
-      cpus: '1.0'
-      memory: 512M
-```
-
----
-
-## Security Best Practices
-
-1. **Protect Your API Key**
-   - Never commit API keys to version control
-   - Use environment files or secrets management
-   - Rotate keys regularly
-
-2. **Network Security**
-   - Never use `CORS=*` in production
-   - Use HTTPS with reverse proxy
-   - Implement rate limiting
-
-3. **Container Security**
-   - Run as non-root user (default PUID/PGID)
-   - Keep Docker image updated
-   - Use specific version tags for production
-
-4. **Monitoring**
-   - Monitor API usage and costs
-   - Set up logging and alerting
-   - Track health check status
-
-5. **Access Control**
-   - Use reverse proxy authentication
-   - Implement IP whitelisting if needed
-   - Monitor access logs
-
----
-
-## API Costs & Limits
-
-Perplexity API pricing varies by plan:
-
-- **Free Tier**: Limited requests per month
-- **Paid Plans**: Higher rate limits and quotas
-
-Check current pricing at: [https://www.perplexity.ai/account/api/group](https://www.perplexity.ai/account/api/group)
-
-Monitor your usage to avoid unexpected costs.
-
----
-
-## License
-
-GPL License - See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/perplexity-mcp-docker/refs/heads/main/LICENSE) for details.
-
-**Disclaimer:** Unofficial Docker image for [@perplexity-ai/mcp-server](https://www.npmjs.com/package/@perplexity-ai/mcp-server). Users are responsible for compliance with Perplexity API terms of service and applicable laws.
-
----
+<p></p>
 
 <div align="center">
 
-[Report Bug](https://github.com/mekayelanik/perplexity-mcp-docker/issues) • [Request Feature](https://github.com/mekayelanik/perplexity-mcp-docker/issues) • [Contribute](https://github.com/mekayelanik/perplexity-mcp-docker/pulls)
+[⬆ Back to Top](#perplexity-mcp-server)
 
 </div>
