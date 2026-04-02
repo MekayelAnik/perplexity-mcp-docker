@@ -1,4 +1,19 @@
+<p align="center"><img src="https://www.perplexity.ai/favicon.svg" alt="Perplexity Logo" width="80"></p>
+
 # Perplexity MCP Server
+
+<p align="center">
+  <a href="https://hub.docker.com/r/mekayelanik/perplexity-mcp"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/mekayelanik/perplexity-mcp?style=flat-square&logo=docker"></a>
+  <a href="https://hub.docker.com/r/mekayelanik/perplexity-mcp"><img alt="Docker Stars" src="https://img.shields.io/docker/stars/mekayelanik/perplexity-mcp?style=flat-square&logo=docker"></a>
+  <a href="https://github.com/mekayelanik/perplexity-mcp-docker/pkgs/container/perplexity-mcp"><img alt="GHCR" src="https://img.shields.io/badge/GHCR-ghcr.io%2Fmekayelanik%2Fperplexity-mcp-blue?style=flat-square&logo=github"></a>
+  <a href="https://github.com/mekayelanik/perplexity-mcp-docker/blob/main/LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
+  <a href="https://hub.docker.com/r/mekayelanik/perplexity-mcp"><img alt="Platforms" src="https://img.shields.io/badge/Platforms-amd64%20%7C%20arm64-lightgrey?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/perplexity-mcp-docker/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/MekayelAnik/perplexity-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/perplexity-mcp-docker/forks"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/MekayelAnik/perplexity-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/perplexity-mcp-docker/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/MekayelAnik/perplexity-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/perplexity-mcp-docker/commits/main"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/MekayelAnik/perplexity-mcp-docker?style=flat-square"></a>
+</p>
+
 ### Multi-Architecture Docker Image for AI-Powered Web Search & Research
 
 <div align="left">
