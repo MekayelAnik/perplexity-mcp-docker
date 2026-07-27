@@ -76,7 +76,7 @@ Perplexity MCP Server provides AI-powered web search and research capabilities t
 |:----|:---------:|:------------|:---------|
 | `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
 | `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
-| `1.0.0` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `1.1.0` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
 | `beta` | ⚠️ | Beta releases | **Testing only** |
 
 ### System Requirements
